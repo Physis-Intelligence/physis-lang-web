@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Physis-Lang · intro v2</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dev">
+
+<!-- Icon sprite (inline, no external dependencies) -->
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-doc" viewBox="0 0 48 60">
+      <path d="M4 3h27l13 13v41H4z" fill="#fff" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M31 3v13h13" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M12 27h24M12 35h24M12 43h24M12 51h15" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-film" viewBox="0 0 64 56">
+      <rect x="2" y="2" width="60" height="52" rx="4" fill="#fff" stroke="currentColor" stroke-width="3"/>
+      <path d="M13 2v52M51 2v52" stroke="currentColor" stroke-width="3"/>
+      <path d="M5 11h5M5 20h5M5 29h5M5 38h5M5 47h5M54 11h5M54 20h5M54 29h5M54 38h5M54 47h5" stroke="currentColor" stroke-width="3"/>
+      <path d="M26 18l13 10-13 10z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24">
+      <rect x="4" y="10.5" width="16" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="2.2"/>
+      <path d="M8 10.5V7.5a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="2.2"/>
+    </symbol>
+    <symbol id="i-robot" viewBox="0 0 48 48">
+      <path d="M24 5v5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="24" cy="4" r="2.5" fill="currentColor"/>
+      <rect x="8" y="10" width="32" height="24" rx="5" fill="#fff" stroke="currentColor" stroke-width="3"/>
+      <circle cx="18" cy="21" r="2.6" fill="currentColor"/>
+      <circle cx="30" cy="21" r="2.6" fill="currentColor"/>
+      <path d="M19 28h10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+      <path d="M15 34v6h18v-6M10 45h28" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-critic" viewBox="0 0 48 56">
+      <rect x="4" y="7" width="40" height="46" rx="4" fill="#fff" stroke="currentColor" stroke-width="3"/>
+      <rect x="15" y="2" width="18" height="10" rx="3" fill="#fff" stroke="currentColor" stroke-width="3"/>
+      <path d="M14 32l7 7 13-14" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24">
+      <path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-cross" viewBox="0 0 24 24">
+      <path d="M7 7l10 10M17 7L7 17" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-bench" viewBox="0 0 48 48">
+      <rect x="3" y="3" width="42" height="42" rx="5" fill="#fff" stroke="currentColor" stroke-width="3"/>
+      <path d="M12 36V26M20 36V18M28 36V22M36 36V12" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-model" viewBox="0 0 64 48">
+      <rect x="3" y="3" width="58" height="42" rx="8" fill="#fff" stroke="currentColor" stroke-width="3"/>
+      <circle cx="18" cy="24" r="5" fill="currentColor"/><circle cx="32" cy="16" r="5" fill="currentColor"/>
+      <circle cx="32" cy="32" r="5" fill="currentColor"/><circle cx="46" cy="24" r="5" fill="currentColor"/>
+      <path d="M18 24L32 16M18 24L32 32M32 16L46 24M32 32L46 24" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+    <symbol id="i-up" viewBox="0 0 24 24">
+      <path d="M12 20V5M5 11l7-7 7 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div id="stage" aria-label="Physis-Lang introduction, version 2">
+
+  <!-- ==============================================================
+       A · Butter comparison. Both real clips start at clip time 0 at
+       timeline 0, play at 1×, and hold their last frame.
+       ============================================================== -->
+  <section class="scene" id="sA">
+    <h1 class="title">From descriptions to physical processes</h1>
+    <div class="a-label left"><div class="lbl-main">Cosmos baseline</div></div>
+    <div class="a-label right"><div class="lbl-main green">Cosmos + Physis-Lang</div><div class="lbl-sub">with our full pipeline</div></div>
+    <div class="a-video left"><video id="vBase" muted playsinline preload="auto" disablepictureinpicture disableremoteplayback></video></div>
+    <div class="a-video right"><video id="vOurs" muted playsinline preload="auto" disablepictureinpicture disableremoteplayback></video></div>
+    <div class="a-outcome left terracotta" data-in="a.outcome" data-fi="0.5" data-dy="12">Unnatural deformation</div>
+    <div class="a-outcome right green" data-in="a.outcome" data-fi="0.5" data-dy="12">Gradual melting and spreading</div>
+    <p class="qual a-note">PhyGenBench example · both clips play from 0 s at normal speed</p>
+  </section>
+
+  <!-- ==============================================================
+       B · What physical language adds (all three rows held together)
+       ============================================================== -->
+  <section class="scene" id="sB">
+    <h1 class="title" data-in="b.title" data-dy="10">Physical language makes the process explicit</h1>
+    <div class="b-conv" data-in="b.conv" data-dy="10">
+      <span class="kicker">Conventional caption</span>
+      <span class="b-conv-text">Butter melts as the temperature rises.</span>
+    </div>
+    <div class="kicker green b-pl" data-in="b.pl">Physical language</div>
+    <div class="b-rows">
+      <div class="b-row cause" id="row-cause" data-in="b.cause" data-dy="12">
+        <div class="b-thumb"><img src="assets/derived/ours_f000.jpg" alt=""><span class="b-t">0 s</span></div>
+        <span class="b-tag">Cause</span><span class="b-text">Rising temperature supplies heat to the butter.</span>
+      </div>
+      <div class="b-row law" id="row-law" data-in="b.law" data-dy="12">
+        <div class="b-thumb"><img src="assets/derived/ours_f096.jpg" alt=""><span class="b-t">4 s</span></div>
+        <span class="b-tag">Law</span><span class="b-text">Heat drives melting; gravity makes the butter slump.</span>
+      </div>
+      <div class="b-row effect" id="row-effect" data-in="b.effect" data-dy="12">
+        <div class="b-thumb"><img src="assets/derived/ours_f180.jpg" alt=""><span class="b-t">7.5 s</span></div>
+        <span class="b-tag">Effect</span><span class="b-text">The solid shrinks as a shallow liquid pool expands.</span>
+      </div>
+    </div>
+    <p class="qual b-note" data-in="b.conv">Illustrative summaries</p>
+  </section>
+
+  <!-- ==============================================================
+       C · Refine shared guidelines (four paced states, then outcomes)
+       ============================================================== -->
+  <section class="scene" id="sC">
+    <div class="c-statement" data-in="c.statement">Refine shared guidelines, not individual video captions.</div>
+
+    <div class="c-diagram" data-in="c.diagram" data-out="c.outcome" data-fo="0.4">
+      <svg class="c-svg" viewBox="0 0 1920 1080" aria-hidden="true">
+        <defs>
+          <marker id="c-arrow-on" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="20" markerHeight="20" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L11 6L1 11z" fill="#2f7d52"/></marker>
+          <marker id="c-arrow-off" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="18" markerHeight="18" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L11 6L1 11z" fill="#b9c3cf"/></marker>
+        </defs>
+        <path class="c-edge" data-steps="1" fill="none" stroke="#b9c3cf" stroke-width="4" marker-end="url(#c-arrow-off)" d="M426 325 H480"/>
+        <path class="c-edge" data-steps="1" fill="none" stroke="#b9c3cf" stroke-width="4" marker-end="url(#c-arrow-off)" d="M740 325 H786"/>
+        <path class="c-edge" data-steps="2" fill="none" stroke="#b9c3cf" stroke-width="4" marker-end="url(#c-arrow-off)" d="M1036 462 V512"/>
+        <path class="c-edge" data-steps="3" fill="none" stroke="#b9c3cf" stroke-width="4" marker-end="url(#c-arrow-off)" d="M788 585 H430"/>
+        <path class="c-edge" data-steps="3" fill="none" stroke="#b9c3cf" stroke-width="4" marker-end="url(#c-arrow-off)" d="M244 518 V462"/>
+        <path class="c-edge" data-steps="4" fill="none" stroke="#b9c3cf" stroke-width="4" marker-end="url(#c-arrow-off)" d="M244 172 V160 H1599 V192"/>
+      </svg>
+
+      <div class="c-box c-sheet" data-steps="1,3,4">
+        <div class="c-head">Shared guideline</div>
+        <span class="c-ver"><span class="v-old" data-out="c.step3+1.2" data-fo="0.3"><i>P</i><sub>t</sub></span><span class="v-new" data-in="c.step3+1.2" data-fi="0.3"><i>P</i><sub>t+1</sub></span></span>
+        <div class="c-lines"><i></i><i></i><i class="rev"></i><i></i><i class="short"></i></div>
+        <div class="c-revised" data-in="c.step3+1.2" data-fi="0.3">revised rule</div>
+      </div>
+
+      <div class="c-box c-capt" data-steps="1">
+        <svg class="c-ic navy"><use href="#i-lock"/></svg>
+        <div class="c-name">Fixed captioner</div>
+        <div class="c-sub">weights frozen</div>
+      </div>
+
+      <div class="c-box c-cards" data-steps="1,2">
+        <div class="c-cards-h"><span class="c-name sm">Captions for many videos</span></div>
+        <div class="c-card"><svg class="c-film"><use href="#i-film"/></svg><div class="c-cl"><i></i><i></i><i class="short"></i></div><span class="c-mark ok" data-in="c.step2+0.9" data-fi="0.3" data-out="c.step3+1.2" data-fo="0.3"><svg><use href="#i-check"/></svg></span></div>
+        <div class="c-card"><svg class="c-film"><use href="#i-film"/></svg><div class="c-cl"><i></i><i class="short"></i><i></i></div><span class="c-mark bad" data-in="c.step2+1.2" data-fi="0.3" data-out="c.step3+1.2" data-fo="0.3"><svg><use href="#i-cross"/></svg></span></div>
+        <div class="c-card"><svg class="c-film"><use href="#i-film"/></svg><div class="c-cl"><i class="short"></i><i></i><i></i></div><span class="c-mark bad" data-in="c.step2+1.5" data-fi="0.3" data-out="c.step3+1.2" data-fo="0.3"><svg><use href="#i-cross"/></svg></span></div>
+      </div>
+
+      <div class="c-schem qual it">schematic outputs</div>
+
+      <div class="c-box c-critic" data-steps="2,3">
+        <svg class="c-ic critic"><use href="#i-critic"/></svg>
+        <div><div class="c-name">Physics-aware critic</div><div class="c-sub">correctness · coverage</div></div>
+      </div>
+
+      <div class="c-box c-agent" data-steps="3">
+        <svg class="c-ic green"><use href="#i-robot"/></svg>
+        <div class="c-name">Evolution agent</div>
+      </div>
+
+      <div class="c-box c-bench" data-steps="4">
+        <svg class="c-ic navy big"><use href="#i-bench"/></svg>
+        <div class="c-name">PhysCapBench</div>
+        <div class="c-sub">held-out validation<br>246 videos</div>
+      </div>
+
+      <div class="c-elabel l-err" data-steps="3">errors</div>
+      <div class="c-elabel l-rev" data-steps="3">revise</div>
+
+      <div class="c-pills">
+        <span class="c-pill" data-step="1">1 Apply</span>
+        <span class="c-pill" data-step="2">2 Evaluate</span>
+        <span class="c-pill" data-step="3">3 Refine</span>
+        <span class="c-pill" data-step="4">4 Validate</span>
+      </div>
+
+      <div class="c-step" data-in="c.step1" data-fi="0.35" data-out="c.step2" data-fo="0.3">
+        <span class="c-num">1</span><div><div class="c-st">Apply shared guidelines</div><div class="c-sx">One guideline instructs the fixed captioner across videos.</div></div>
+      </div>
+      <div class="c-step" data-in="c.step2" data-fi="0.35" data-out="c.step3" data-fo="0.3">
+        <span class="c-num">2</span><div><div class="c-st">Evaluate physical descriptions</div><div class="c-sx">The critic checks correctness and coverage.</div></div>
+      </div>
+      <div class="c-step" data-in="c.step3" data-fi="0.35" data-out="c.step4" data-fo="0.3">
+        <span class="c-num">3</span><div><div class="c-st">Refine the guideline</div><div class="c-sx">The agent uses recurring errors to improve the shared instruction.</div></div>
+      </div>
+      <div class="c-step" data-in="c.step4" data-fi="0.35">
+        <span class="c-num">4</span><div><div class="c-st">Validate and repeat</div><div class="c-sx">Evaluate on PhysCapBench; stop when gains saturate, keep the best.</div></div>
+      </div>
+    </div>
+
+    <div class="c-out" data-in="c.outcome+0.2" data-fi="0.45">
+      <div class="c-protocol">Fixed Cosmos3-Nano · only the inference captions change (guideline Iter 1 → 9)</div>
+      <div class="c-card2 cl">
+        <div class="c-o-h">Caption quality improves</div>
+        <div class="c-o-m">PhysCapBench F1</div>
+        <div class="c-o-n"><span data-val="loop.f1_endpoints.display_from"></span> → <span data-val="loop.f1_endpoints.display_to"></span></div>
+        <div class="c-o-g"><span data-val="loop.f1_endpoints.display_gain"></span> points</div>
+        <svg class="c-spark" id="spark-f1" viewBox="0 0 760 170" aria-hidden="true"></svg>
+      </div>
+      <div class="c-link">and</div>
+      <div class="c-card2 cr">
+        <div class="c-o-h">Video generation improves</div>
+        <div class="c-o-m">PhyGenBench</div>
+        <div class="c-o-n"><span data-val="loop.generation.display_from"></span> → <span data-val="loop.generation.display_to"></span></div>
+        <div class="c-o-g"><span data-val="loop.generation.display_gain"></span> points</div>
+        <svg class="c-spark" id="spark-gen" viewBox="0 0 760 170" aria-hidden="true"></svg>
+      </div>
+      <p class="qual c-o-note">Linked outcomes · F1 dips at Iter 2</p>
+    </div>
+  </section>
+
+  <!-- ==============================================================
+       D · Language-guided retrieval: process, then Table 6 evidence
+       ============================================================== -->
+  <section class="scene" id="sD">
+    <h1 class="title" data-in="d.title" data-dy="10">Physical language selects training data</h1>
+
+    <div class="d-stage" id="d-s1" data-in="d.s1" data-dy="10">
+      <div class="d-h"><span class="d-n">1</span>Model physics<br>deficiencies</div>
+      <div class="d-vis d-defs">
+        <div class="d-bar"><span>thermal</span><i style="width:150px"></i></div>
+        <div class="d-bar"><span>fracture</span><i style="width:120px"></i></div>
+        <div class="d-bar"><span>cloth</span><i style="width:96px"></i></div>
+      </div>
+    </div>
+    <div class="d-stage" id="d-s2" data-in="d.s2" data-dy="10">
+      <div class="d-h"><span class="d-n">2</span>Physics<br>tags</div>
+      <div class="d-vis d-tags"><span class="d-chip">thermal</span><span class="d-chip">fracture</span><span class="d-chip">cloth</span></div>
+    </div>
+    <div class="d-stage" id="d-s3" data-in="d.s3" data-dy="10">
+      <div class="d-h"><span class="d-n">3</span>Text-level<br>gallery matching</div>
+      <div class="d-vis d-gal">
+        <div class="d-card m"><svg><use href="#i-film"/></svg><span class="d-chip sm">thermal</span></div>
+        <div class="d-card x"><svg><use href="#i-film"/></svg><span class="d-chip sm">optics</span></div>
+        <div class="d-card x"><svg><use href="#i-film"/></svg><span class="d-chip sm">fluid</span></div>
+        <div class="d-card m"><svg><use href="#i-film"/></svg><span class="d-chip sm">cloth</span></div>
+        <div class="qual it d-schem">Schematic</div>
+      </div>
+    </div>
+    <div class="d-stage" id="d-s4" data-in="d.s4" data-dy="10">
+      <div class="d-h"><span class="d-n">4</span>Retrieve +<br>recaption</div>
+      <div class="d-vis d-rec">
+        <div class="d-recrow"><svg class="d-rf"><use href="#i-film"/></svg><span class="d-plus">+</span><svg class="d-rd"><use href="#i-doc"/></svg></div>
+        <div class="d-recrow"><svg class="d-rf"><use href="#i-film"/></svg><span class="d-plus">+</span><svg class="d-rd"><use href="#i-doc"/></svg></div>
+        <div class="qual d-cap">physical-language captions</div>
+      </div>
+    </div>
+    <div class="d-stage" id="d-s5" data-in="d.s5" data-dy="10">
+      <div class="d-h"><span class="d-n">5</span>Enriched<br>training data</div>
+      <div class="d-vis d-data">
+        <div class="d-stack"><div class="d-add">+ retrieved</div><div class="d-base">WISA</div></div>
+      </div>
+    </div>
+    <div class="d-arrows" data-in="d.s2">
+      <span style="left:394px">›</span><span style="left:758px">›</span><span style="left:1122px">›</span><span style="left:1486px">›</span>
+    </div>
+
+    <div class="d-table" data-in="d.table" data-fi="0.5">
+      <div class="d-tr d-th"><span class="c1">Benchmark</span><span class="c2">WISA</span><span class="c3"></span><span class="c4">+ Retrieved</span><span class="c5">Gain</span><span class="c6"></span></div>
+      <div id="t6-rows"></div>
+      <p class="qual d-tnote">VideoPhy-2 here is the full set (not Hard)</p>
+    </div>
+  </section>
+
+  <!-- ==============================================================
+       E · Four benchmarks (teaser radar, unmodified)
+       ============================================================== -->
+  <section class="scene" id="sE">
+    <h1 class="title" data-in="e.title" data-dy="10">Gains across four physical benchmarks</h1>
+    <img id="radar" class="radar" src="assets/derived/radar_from_teaser_pdf.png" alt="Radar chart: PhyGround, PhyGenBench, Physics-IQ Verified, VideoPhy-2 (Hard Set); legend CogVideoX1.5-5B, Wan2.2-TI2V-5B, HunyuanVideo-1.5, Cosmos3-Nano, Veo 3.1, Ours" data-in="e.radar" data-fi="0.6">
+    <p class="qual e-note" data-in="e.note">Ours = Cosmos3-Nano with Physis-Lang · each axis has its own scale</p>
+  </section>
+
+  <!-- ==============================================================
+       F · Table 5: across backbones and scales (zero-origin bars)
+       ============================================================== -->
+  <section class="scene" id="sF">
+    <h1 class="title" data-in="f.title" data-dy="10">Gains across backbones and scales</h1>
+    <div class="f-axis" data-in="f.axis">Mean gain across four benchmarks (points)</div>
+    <div class="f-group" data-in="f.bars"><span class="f-glabel">Cosmos 3 · three scales</span></div>
+    <div id="t5-chart" data-in="f.bars" data-fi="0.3"></div>
+  </section>
+
+  <!-- ==============================================================
+       G · Showcase: six generated examples, short highlights
+       (slots are built from js/showcase_data.js)
+       ============================================================== -->
+  <section class="scene" id="sG">
+    <div class="g-head" data-in="g.title">
+      <span class="g-title">Physically coherent video generation</span>
+    </div>
+    <div id="g-slots"></div>
+  </section>
+
+  <!-- ==============================================================
+       H · Three contributions
+       ============================================================== -->
+  <section class="scene" id="sH">
+    <div class="h-panel" data-in="h.p1" data-dy="12">
+      <div class="h-top"><span class="h-n">1</span><span class="h-t">Represent physics<br>in language</span></div>
+      <div class="h-vis h-cle">
+        <div class="h-chip cause">Cause</div><div class="h-ar">↓</div>
+        <div class="h-chip law">Law</div><div class="h-ar">↓</div>
+        <div class="h-chip effect">Effect</div>
+        <div class="h-uses"><span>data</span><span>training</span><span>inference</span></div>
+      </div>
+    </div>
+    <div class="h-panel" data-in="h.p2" data-dy="12">
+      <div class="h-top"><span class="h-n">2</span><span class="h-t">Evolve shared<br>guidelines</span></div>
+      <div class="h-vis h-evo">
+        <div class="h-sheet"><svg><use href="#i-doc"/></svg><span class="h-cyc">↻</span></div>
+        <div class="h-row"><span class="h-mini"><svg><use href="#i-critic"/></svg>critic feedback</span></div>
+        <div class="h-row"><span class="h-mini"><svg><use href="#i-bench"/></svg>PhysCapBench</span></div>
+      </div>
+    </div>
+    <div class="h-panel" data-in="h.p3" data-dy="12">
+      <div class="h-top"><span class="h-n">3</span><span class="h-t">Drive targeted<br>data expansion</span></div>
+      <div class="h-vis h-data">
+        <div class="h-tagline"><span class="d-chip">thermal</span><span class="d-chip">cloth</span></div>
+        <div class="h-cards"><span class="h-card m"><svg><use href="#i-film"/></svg></span><span class="h-card x"><svg><use href="#i-film"/></svg></span><span class="h-card m"><svg><use href="#i-film"/></svg></span></div>
+        <div class="h-gen"><svg class="h-model"><use href="#i-model"/></svg><svg class="h-up"><use href="#i-up"/></svg><span>improved generator</span></div>
+      </div>
+    </div>
+    <div class="h-links" data-in="h.p3"><span style="left:622px">→</span><span style="left:1238px">→</span></div>
+    <div class="h-sentence" data-in="h.sentence" data-dy="10">Physical language connects representation, refinement, and data.</div>
+  </section>
+
+  <!-- Optional burned-in subtitles (off by default; ?subs=1 or key C) -->
+  <div id="subs" hidden><span id="subs-text"></span></div>
+  <div id="guides" hidden></div>
+</div>
+
+<!-- Start / loading overlay -->
+<div id="overlay">
+  <div class="ov-card">
+    <h2>Physis-Lang intro · v2</h2>
+    <p id="ov-status">Loading assets…</p>
+    <ul id="ov-list"></ul>
+    <button id="btn-start" type="button" disabled>Start</button>
+    <p class="ov-hint">Space play/pause · R replay · 1–8 jump to scene · ←/→ ±1 s · C subtitles · G safe area · L layout check</p>
+    <p class="ov-hint"><a href="?record=1">Recording mode</a> hides every control and the cursor.</p>
+  </div>
+  <p id="ov-record">Loading…</p>
+</div>
+
+<!-- Development controls (hidden in recording mode) -->
+<div id="controls" hidden>
+  <button id="btn-play" type="button">Play</button>
+  <button id="btn-replay" type="button">Replay</button>
+  <span id="scene-btns"></span>
+  <input id="scrub" type="range" min="0" max="120" step="0.01" value="0" aria-label="Timeline">
+  <span id="timecode" class="tabnum">0.00</span>
+  <span id="gate" hidden title="See README: radar release gate">Radar: release gate</span>
+  <button id="btn-subs" type="button" title="Subtitles (C)">CC</button>
+  <button id="btn-guides" type="button" title="Safe-area guides (G)">Guides</button>
+  <button id="btn-check" type="button" title="Layout check (L)">Check</button>
+  <a id="lnk-record" href="?record=1">Record mode</a>
+</div>
+<div id="report" hidden></div>
+
+<script src="js/timeline.js"></script>
+<script src="js/chart_values.js"></script>
+<script src="js/showcase_data.js"></script>
+<script src="js/intro.js?v=portable-3"></script>
+</body>
+</html>

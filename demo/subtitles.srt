@@ -1,0 +1,107 @@
+1
+00:00:00,400 --> 00:00:05,600
+One PhyGenBench example: the Cosmos baseline,
+and Cosmos with our full Physis-Lang pipeline.
+
+2
+00:00:05,800 --> 00:00:09,200
+Watch how the butter melts.
+
+3
+00:00:10,500 --> 00:00:13,600
+A conventional caption only names the event.
+
+4
+00:00:14,100 --> 00:00:18,000
+Physical language makes the process explicit:
+
+5
+00:00:18,300 --> 00:00:22,000
+the cause, the governing law,
+and the resulting effect.
+
+6
+00:00:22,800 --> 00:00:25,700
+We refine shared guidelines,
+not individual captions.
+
+7
+00:00:25,900 --> 00:00:29,900
+First, one guideline instructs
+a fixed captioner across videos.
+
+8
+00:00:32,700 --> 00:00:37,100
+A physics-aware critic checks each description
+for correctness and coverage.
+
+9
+00:00:37,900 --> 00:00:42,200
+An agent turns recurring errors
+into a better shared instruction.
+
+10
+00:00:43,200 --> 00:00:47,400
+Each version is validated on PhysCapBench
+until gains saturate.
+
+11
+00:00:48,300 --> 00:00:50,600
+Caption quality improves.
+
+12
+00:00:50,900 --> 00:00:55,500
+With Cosmos kept fixed, the same guideline
+versions also improve video generation.
+
+13
+00:00:57,100 --> 00:01:00,500
+Physical language also selects training data:
+
+14
+00:01:00,700 --> 00:01:05,100
+model deficiencies become physics tags,
+matched as text against gallery captions.
+
+15
+00:01:05,200 --> 00:01:08,200
+Matching videos are retrieved and recaptioned.
+
+16
+00:01:08,500 --> 00:01:11,500
+Compared with WISA alone,
+adding the retrieved videos
+
+17
+00:01:11,700 --> 00:01:15,300
+improves all three benchmarks,
+by about three points on average.
+
+18
+00:01:17,700 --> 00:01:22,400
+On four physical benchmarks, Physis-Lang
+improves over the Cosmos3-Nano baseline.
+
+19
+00:01:26,600 --> 00:01:30,700
+The gains carry across backbones and scales:
+
+20
+00:01:30,900 --> 00:01:35,100
+mean improvements range
+from three to seven points.
+
+21
+00:01:37,900 --> 00:01:42,200
+Models trained with Physis-Lang generate
+videos with coherent physical dynamics.
+
+22
+00:01:54,500 --> 00:01:58,800
+Represent physics in language, evolve shared
+guidelines, and target data expansion.
+
+23
+00:01:59,100 --> 00:02:03,000
+Physical language connects
+representation, refinement, and data.

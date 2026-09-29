@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Physis-Lang | Self-Evolving Language for Video World Models</title>
+  <meta name="description" content="Physis-Lang makes physical language a shared, self-evolving representation for data curation, model training, and video generation. Research from NVIDIA.">
+  <meta name="theme-color" content="#175c40">
+  <link rel="icon" type="image/png" href="assets/physis-logo.png">
+  <link rel="stylesheet" href="style.css?v=idea-white-20260929"><script src="site.js?v=mp4-20260929" defer></script>
+</head>
+<body>
+<a class="skip" href="#overview">Skip to content</a>
+<header class="topbar"><a class="brand" href="#"><img class="brand-logo" src="assets/physis-logo.png" alt="Physis logo" width="48" height="48"> Physis-Lang</a><nav aria-label="Main navigation"><a href="#overview">Overview</a><a href="#method">Method</a><a href="#results">Results</a><a href="#gallery">Gallery</a></nav><a class="paper-nav" href="assets/Physis-Lang.pdf?v=20260929" target="_blank" rel="noopener">Read the paper <span aria-hidden="true">↗</span></a></header>
+<main>
+<section class="hero wrap" id="overview">
+  <img class="hero-logo" src="assets/physis-logo.png" alt="Physis" width="104" height="104">
+  <h1><span>Physis-Lang</span>Self-Evolving Language as a Physical<br class="desktop"> Representation for Video World Model</h1>
+  <p class="authors">Liming Lu<sup>†2</sup>, Xianzheng Ma<sup>†3</sup>, Wenkun He<sup>†2</sup>, Guanqi Zhan<sup>†*1</sup>, Yilin Zhao<sup>1</sup>, Junyu Chen<sup>1</sup>,<br class="desktop"> Mengyao Xu<sup>1</sup>, Jiaojiao Fan<sup>1</sup>, Wenhang Ge<sup>1</sup>, Yuchao Gu<sup>1</sup>, Yunze Liu<sup>1</sup>, Boyi Li<sup>1</sup>, Zhen Dong<sup>1</sup>,<br class="desktop"> Victor Prisacariu<sup>3</sup>, Ming-Yu Liu<sup>1</sup>, Song Han<sup>1</sup>, Han Cai<sup>*1</sup></p>
+  <p class="affiliation"><sup>1</sup> NVIDIA &nbsp; <sup>2</sup> MIT &nbsp; <sup>3</sup> University of Oxford <span>† Equal contribution &nbsp; * Corresponding authors</span></p>
+  <div class="hero-actions"><a class="button primary" href="assets/Physis-Lang.pdf?v=20260929" target="_blank" rel="noopener"><span aria-hidden="true">↗</span> Paper</a><a class="button" href="#demo"><span aria-hidden="true">▷</span> Watch the overview</a><a class="button" href="#gallery">Explore videos <span aria-hidden="true">↓</span></a></div>
+  <p class="hero-thesis">Language can do more than describe a scene.<br>It can represent <em>how the physical world evolves.</em></p>
+</section>
+<section class="leaderboard-band" id="leaderboard"><div class="wrap section">
+  <div class="section-heading"><h2>Physics-IQ Verified</h2><p class="section-subtitle">First and second on the public leaderboard.</p></div>
+  <div class="leaderboard-scores">
+    <article><span class="leaderboard-rank">#1</span><h3>Physis-Lang · Cosmos3-Super</h3><p class="leaderboard-score">48.2 <span>± 1.4</span></p></article>
+    <article><span class="leaderboard-rank">#2</span><h3>Physis-Lang · Cosmos3-Nano</h3><p class="leaderboard-score">43.3 <span>± 1.5</span></p></article>
+  </div>
+  <p class="leaderboard-summary">Super improves on the previous leading score of 42.7 by <strong>5.5 percentage points</strong>. Nano also surpasses the original Cosmos3-Super by mean score.</p>
+  <figure class="leaderboard-figure"><a href="assets/leaderboard-comparison.png" target="_blank" rel="noopener" aria-label="Open the full-size leaderboard comparison"><img src="assets/leaderboard-comparison.png" alt="Before and after leaderboard comparison: Physis-Lang Cosmos3-Super scores 48.2 ± 1.4 and Cosmos3-Nano scores 43.3 ± 1.5, taking the top two places ahead of Cosmos3 Super, Seedance 2.5, and MiniMax H3." width="1983" height="793" loading="lazy"></a></figure>
+  <div class="leaderboard-link"><a class="button primary" href="https://physics-iq-verified.anates.ai/" target="_blank" rel="noopener">View the live leaderboard <span aria-hidden="true">↗</span></a><p class="caption">I2V Verified · Ranked by mean score · September 29, 2026</p></div>
+</div></section>
+<section class="intro-band"><div class="wrap intro-grid"><h2>The Idea</h2><div><p class="section-subtitle">A shared language for physical intelligence.</p><p>Visually convincing videos can still break the laws of physics. Physis-Lang makes causes, interactions, governing principles, and effects explicit in language—then improves that language through feedback. The same representation connects <strong>data curation, model training, and inference.</strong></p></div></div></section>
+
+<section class="section wrap" id="demo">
+  <div class="demo-player" id="demo-player">
+    <video id="demo-video" controls playsinline preload="metadata" style="display:block;width:100%;height:auto;background:#000" aria-label="Physis-Lang demo video">
+      <source src="assets/intro_video.mp4" type="video/mp4">
+      Your browser does not support embedded video. <a href="assets/intro_video.mp4">Download the demo video</a>.
+    </video>
+  </div>
+</section>
+
+<section class="section wrap" id="method">
+  <div class="section-heading"><h2>Representation</h2><p class="section-subtitle">Beyond what happens. <em>Explain why it happens.</em></p></div>
+  <div class="reasoning-grid"><div class="reasoning-visual"><img src="assets/derived/ours_f096.jpg" alt="Generated butter softening and spreading as it melts" width="832" height="480" loading="lazy"><p>“Butter melts as the temperature rises.”</p><span>Conventional caption</span></div><div class="reasoning-steps"><article><span class="step-number">01</span><div><h3>Cause</h3><p>Rising temperature supplies heat to the butter.</p></div></article><article><span class="step-number">02</span><div><h3>Physical law</h3><p>Heat drives melting; gravity makes the butter slump.</p></div></article><article><span class="step-number">03</span><div><h3>Effect</h3><p>The solid shrinks as a shallow liquid pool expands.</p></div></article></div></div>
+  <div class="method-overview"><div class="section-heading compact"><h2>Framework</h2><p class="section-subtitle">One representation. Three connected stages.</p></div><div class="three-columns"><article><span class="mini-index">A</span><h3>Evolve the language</h3><p>A physics-aware critic diagnoses missing or unsupported claims. An agent refines shared captioning guidelines while the captioner stays fixed.</p></article><article><span class="mini-index">B</span><h3>Retrieve missing physics</h3><p>Model failures become physics-domain queries. Language-guided retrieval finds visually diverse videos that address those deficiencies.</p></article><article><span class="mini-index">C</span><h3>Train and generate</h3><p>The evolved language re-captions training videos and expands inference prompts, with scene-specific negative descriptions to discourage implausible dynamics.</p></article></div>
+  <figure class="paper-figure"><a href="assets/method.png" target="_blank" rel="noopener" aria-label="Open full-resolution method figure"><img src="assets/method.png" width="1424" height="850" alt="Physis-Lang method: caption evolution loop, physics-tag retrieval, and dataset construction using the best guidelines" loading="lazy"></a><figcaption>Framework from the release paper, Figure 2. Click to view at full resolution.</figcaption></figure></div>
+</section>
+
+<section class="benchmark-band" id="benchmark"><div class="wrap"><div class="benchmark-heading"><div><h2>PhysCapBench</h2><p class="section-subtitle">A benchmark for evaluating the richness of physical detail in video captions.</p></div></div><div class="benchmark-stats"><div><strong>246</strong><span>Reviewed physical videos</span></div><div><strong>3,794</strong><span>Human-verified assertions</span></div><div><strong>15.4</strong><span>Assertions per video</span></div></div><div class="critic-grid"><article><span class="tag">PRECISION</span><h3>Is each claim supported?</h3><p>Decompose the caption into atomic claims and verify each against the video as correct, incorrect, or uncertain.</p></article><article><span class="tag">RECALL</span><h3>Is the physical meaning covered?</h3><p>Check whether the caption explicitly states or entails each complete human-curated physical assertion.</p></article></div><p class="caption">F1 combines precision and recall. PhysCapBench also provides validation for selecting the best evolved guidelines.</p></div></section>
+
+<section class="section wrap" id="evolution"><div class="section-heading"><h2>Self-Evolution</h2><p class="section-subtitle">Better guidelines. Better physical descriptions. Better physical generation.</p></div>
+  <div class="chart-replay"><button class="small-button" id="replay-evolution" type="button" aria-label="Replay Self-Evolution charts">↻ Replay</button></div>
+  <div class="chart-grid"><article class="chart-card"><div class="chart-heading"><div><p>PhysCapBench F1</p><h3>78.64 <span>→</span> 87.82</h3></div><span class="gain">+9.18 pts</span></div><div id="caption-chart"></div></article><article class="chart-card"><div class="chart-heading"><div><p>PhyGenBench</p><h3>64.17 <span>→</span> 67.29</h3></div><span class="gain">+3.12 pts</span></div><div id="generation-chart"></div></article></div>
+  <p class="caption">Release paper, Figure 4. Downstream comparison keeps pretrained Cosmos3-Nano fixed and changes only the inference captions from guideline iterations 1, 4, 8, and 9. Caption F1 is non-monotonic; iteration 9 is selected.</p>
+  <div class="retrieval-strip"><div><h3>Language-Guided Data Curation</h3><p class="section-subtitle">Find the physics the model is missing.</p></div></div>
+  <figure class="retrieval-chart" id="retrieval-chart">
+    <div class="retrieval-chart-heading"><div><h4>VideoPhy-2 gains by physical category</h4><p>Improvement after language-guided retrieval</p></div><button class="small-button" type="button" id="replay-retrieval">↻ Replay</button></div>
+    <div class="category-rows">
+      <div class="category-row" style="--order:0" aria-label="Cloth deformation, 167 samples: gain 7.19 percentage points"><span>Cloth deformation <small>(167)</small></span><div class="category-track"><i style="--value:89.875%"></i></div><strong>+7.19</strong></div>
+      <div class="category-row" style="--order:1" aria-label="Fracture mechanics, 94 samples: gain 7.45 percentage points"><span>Fracture mechanics <small>(94)</small></span><div class="category-track"><i style="--value:93.125%"></i></div><strong>+7.45</strong></div>
+      <div class="category-row" style="--order:2" aria-label="Elasticity, 81 samples: gain 1.23 percentage points"><span>Elasticity <small>(81)</small></span><div class="category-track"><i style="--value:15.375%"></i></div><strong>+1.23</strong></div>
+      <div class="category-row" style="--order:3" aria-label="Chemical processes, 50 samples: gain 8.00 percentage points"><span>Chemical processes <small>(50)</small></span><div class="category-track"><i style="--value:100%"></i></div><strong>+8.00</strong></div>
+      <div class="category-row" style="--order:4" aria-label="Rigid-body motion, 33 samples: gain 6.06 percentage points"><span>Rigid-body motion <small>(33)</small></span><div class="category-track"><i style="--value:75.75%"></i></div><strong>+6.06</strong></div>
+      <div class="category-row" style="--order:5" aria-label="Contact and collision, 29 samples: gain 3.45 percentage points"><span>Contact / collision <small>(29)</small></span><div class="category-track"><i style="--value:43.125%"></i></div><strong>+3.45</strong></div>
+      <div class="category-row" style="--order:6" aria-label="Soft-body motion, 27 samples: gain 7.41 percentage points"><span>Soft-body motion <small>(27)</small></span><div class="category-track"><i style="--value:92.625%"></i></div><strong>+7.41</strong></div>
+      <div class="category-row" style="--order:7" aria-label="Thermal processes, 25 samples: gain 8.00 percentage points"><span>Thermal processes <small>(25)</small></span><div class="category-track"><i style="--value:100%"></i></div><strong>+8.00</strong></div>
+    </div>
+    <div class="category-axis" aria-hidden="true"><span>0</span><span>2</span><span>4</span><span>6</span><span>8</span></div>
+    <p class="category-axis-label">Joint-score gain (percentage points)</p>
+    <figcaption>Release paper, Figure 5. Numbers in parentheses indicate sample counts. A sample may belong to multiple physical categories.</figcaption>
+  </figure>
+</section>
+
+<section class="results-band" id="results"><div class="wrap section"><div class="section-heading"><h2>Results</h2><p class="section-subtitle">Stronger physical generation across benchmarks and backbones.</p></div>
+  <div class="chart-replay"><button class="small-button" id="replay-results" type="button" aria-label="Replay Results charts">↻ Replay</button></div>
+  <div class="result-legend"><span><i class="legend-baseline"></i>Cosmos3-Nano</span><span><i class="legend-veo"></i>Veo 3.1</span><span><i class="legend-ours"></i>Physis-Lang (Cosmos3-Nano)</span></div><div class="result-bars" id="result-bars"></div>
+  <p class="caption">Release paper, Tables 1–4. Scores use a 100-point scale with the same evaluation protocol per benchmark. VideoPhy-2 above uses the <strong>Hard</strong> split; on the full set, Physis-Lang scores 68.02 vs. Veo 3.1’s 68.87. PhyGenBench and VideoPhy-2 use GPT-5.5 evaluation.</p>
+  <details class="results-details"><summary>View benchmark scores and backbone gains</summary><div class="table-scroll"><table><caption>Physical generation benchmark scores · higher is better</caption><thead><tr><th scope="col">Model</th><th scope="col">PhyGenBench</th><th scope="col">Physics-IQ<br>Verified</th><th scope="col">VideoPhy-2<br>All / Hard</th><th scope="col">PhyGround</th></tr></thead><tbody><tr><th scope="row">Cosmos3-Nano</th><td>61.67</td><td>40.23</td><td>60.41 / 48.31</td><td>65.18</td></tr><tr><th scope="row">Veo 3.1</th><td>65.63</td><td>34.99</td><td>68.87 / 58.43</td><td>69.24</td></tr><tr class="highlight"><th scope="row">Physis-Lang (Cosmos3-Nano)</th><td>71.04</td><td>43.41</td><td>68.02 / 62.36</td><td>69.90</td></tr></tbody></table></div></details>
+  <div class="backbone-heading"><h3>Gains across model families and scales</h3></div><div class="backbone-families"><section class="model-family wan-family" aria-labelledby="wan-family-title"><h4 id="wan-family-title">Wan</h4><div class="family-models"><div><span>Wan2.1</span><small>14B</small><strong>+7.05</strong></div></div></section><section class="model-family cosmos-family" aria-labelledby="cosmos-family-title"><h4 id="cosmos-family-title">Cosmos</h4><div class="family-models"><div><span>Cosmos3-Edge</span><small>4B</small><strong>+3.24</strong></div><div><span>Cosmos3-Nano</span><small>16B</small><strong>+6.22</strong></div><div><span>Cosmos3-Super</span><small>64B</small><strong>+5.02</strong></div></div></section></div><p class="caption">Release paper, Table 5. Mean gains are positive for every backbone; individual benchmark gains can vary.</p>
+</div></section>
+
+<section class="section wrap" id="gallery"><div class="section-heading"><h2>Video Gallery</h2><p class="section-subtitle">Physical processes, brought to life.</p></div><div class="gallery-grid">
+<figure><video controls muted playsinline loop preload="metadata" poster="assets/gallery-1.jpg" src="assets/showcase/Ours_Cosmos3-Nano_12.mp4" aria-label="Generated sequential contact and collision of wooden blocks"></video><figcaption><span class="gallery-index">01</span><div><h3>Contact and collision</h3><p>The blocks topple in sequence.</p></div></figcaption></figure>
+<figure><video controls muted playsinline loop preload="metadata" poster="assets/gallery-2.jpg" src="assets/showcase/Ours_Cosmos3-Nano_14.mp4" aria-label="Generated paper wetting and deforming in liquid"></video><figcaption><span class="gallery-index">02</span><div><h3>Wetting and deformation</h3><p>The paper settles and deforms in the liquid.</p></div></figcaption></figure>
+<figure><video controls muted playsinline loop preload="metadata" poster="assets/gallery-3.jpg" src="assets/showcase/Ours_Cosmos3-Super_15.mp4" aria-label="Generated green paper tearing as two grips pull apart"></video><figcaption><span class="gallery-index">03</span><div><h3>Tearing under tension</h3><p>The tear opens as the grips pull apart.</p></div></figcaption></figure>
+<figure><video controls muted playsinline loop preload="metadata" poster="assets/gallery-4.jpg" src="assets/showcase/Ours_Cosmos3-Super_16.mp4" aria-label="Generated shadow moving as a yellow mug rotates"></video><figcaption><span class="gallery-index">04</span><div><h3>Motion and shadows</h3><p>The shadow changes as the mug rotates.</p></div></figcaption></figure>
+<figure><video controls muted playsinline loop preload="metadata" poster="assets/gallery-5.jpg" src="assets/showcase/Ours_Wan2.1-14B_18.mp4" aria-label="Generated pillow compression under a kettlebell"></video><figcaption><span class="gallery-index">05</span><div><h3>Deformation under load</h3><p>The pillow compresses beneath the weight.</p></div></figcaption></figure>
+</div><p class="caption">Generated outputs, not retrieved training videos. Examples illustrate individual phenomena rather than aggregate benchmark performance.</p></section>
+
+<section class="section wrap citation-section" id="citation"><div class="section-heading compact"><h2>Citation</h2><p class="section-subtitle">Build on this work.</p></div><div class="citation-box"><button class="small-button" id="copy-citation" type="button">Copy BibTeX</button><pre id="bibtex">@misc{lu2026physislang,
+  title={Physis-Lang: Self-Evolving Language as a Physical
+         Representation for Video World Model},
+  author={Liming Lu and Xianzheng Ma and Wenkun He and Guanqi Zhan
+          and Yilin Zhao and Junyu Chen and Mengyao Xu and Jiaojiao Fan
+          and Wenhang Ge and Yuchao Gu and Yunze Liu and Boyi Li
+          and Zhen Dong and Victor Prisacariu and Ming-Yu Liu
+          and Song Han and Han Cai},
+  year={2026},
+  institution={NVIDIA}
+}</pre><span id="copy-status" class="sr-only" role="status"></span></div></section>
+</main>
+<footer class="wrap"><a class="brand" href="#"><img class="brand-logo" src="assets/physis-logo.png" alt="Physis logo" width="48" height="48"> Physis-Lang</a></footer>
+</body></html>
